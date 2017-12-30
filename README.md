@@ -20,6 +20,33 @@ vagrant up
 ```
 for long explantion check [packer-oraclelinux-ovf](https://github.com/kikitux/packer-oraclelinux-ovf)
 
+# our app
+
+download ojdbc8.jar](http://www.oracle.com/technetwork/database/features/jdbc/jdbc-ucp-122-3110062.html) and leave a copy in `src\demo`
+
+TL;DR
+
+```
+cd src\demo
+mvn install:install-file -Dfile=ojdbc8.jar -DgroupId=com.oracle -DartifactId=ojdbc8 -Dversion=12.2.0.1 -Dpackaging=jar
+./gradlew build
+./gradlew test
+./gradlew bootRun 
+```
+
+Now we can check our app.
+
+At this stage this works:
+
+```
+curl -s 'http://localhost:8080/hello'
+curl -s 'http://localhost:8080/greeting'
+curl -s 'http://localhost:8080/greeting?name=World'
+curl -s 'http://localhost:8080/greeting'
+curl -s 'http://localhost:8080/greetingData?name=World'
+```
+
+
 # general info
 
 base oracle db is created by using [packer-oraclelinux-ovf](https://github.com/kikitux/packer-oraclelinux-ovf) repo
@@ -28,9 +55,9 @@ then using vagrant we will start our own oracle db that will be available on por
 use `sys` and `system` have the password of `Password1` defined in the db configuration file `provision/xe.rsp`.
 
 # todo
-[x] base oracledb
-[x] local project Vagrantfile
 [] base oracledb schema
 [] simple grapql app
+[x] base oracledb
+[x] local project Vagrantfile
 
 
