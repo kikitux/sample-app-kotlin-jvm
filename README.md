@@ -18,7 +18,6 @@ make xe.box
 cd ../../../../
 vagrant up
 ```
-
 for long explantion check [packer-oraclelinux-ovf](https://github.com/kikitux/packer-oraclelinux-ovf)
 
 # general info
@@ -26,10 +25,11 @@ for long explantion check [packer-oraclelinux-ovf](https://github.com/kikitux/pa
 base oracle db is created by using [packer-oraclelinux-ovf](https://github.com/kikitux/packer-oraclelinux-ovf) repo
 then using vagrant we will start our own oracle db that will be available on port 1521 of the localhost
 
+use `sys` and `system` have the password of `Password1` defined in the db configuration file `provision/xe.rsp`.
 
 # todo
-[] base oracledb
-[] local project Vagrantfile
+[x] base oracledb
+[x] local project Vagrantfile
 [] base oracledb schema
 [] simple grapql app
 
