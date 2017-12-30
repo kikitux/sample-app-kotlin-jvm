@@ -1,0 +1,3 @@
+[submodule "dep/github/kikitux/packer-oraclelinux-ovf"]
+	path = dep/github/kikitux/packer-oraclelinux-ovf
+	url = git@github.com:kikitux/packer-oraclelinux-ovf.git
