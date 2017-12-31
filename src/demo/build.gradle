@@ -41,8 +41,13 @@ repositories {
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.springframework.boot:spring-boot-starter-jdbc')
 	compile("org.jetbrains.kotlin:kotlin-stdlib-jre8")
 	compile("org.jetbrains.kotlin:kotlin-reflect")
-	compile('com.fasterxml.jackson.module:jackson-module-kotlin')
+	compile('com.fasterxml.jackson.module:jackson-module-kotlin') // to be able to override string for data class
+    compile files('./ojdbc8.jar')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+
+
 }
+
