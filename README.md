@@ -1,4 +1,5 @@
 # sample-app-kotlin-jvm
+
 repository for our same app that will create a graphql endpoint
 
 # pre-requirements
@@ -63,6 +64,8 @@ datadog can be enabled by:
 - run the optional vagrant script `vagrant provision --provision-with datadog`
 
 this will setup datadog, and will also install [cx_Oracle](https://oracle.github.io/python-cx_Oracle) python driver
+
+if everything went fine, you should be able to check the dashboard for your [xe vm](https://app.datadoghq.com/dash/host_name/xe?page=0&live=4h) in the [datadog dashboard](https://app.datadoghq.com)
 
 # general info
 
