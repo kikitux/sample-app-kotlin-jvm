@@ -4,3 +4,6 @@
 ojdbc8.jar
 datadog.env
 *.log
+terraform.tfstate*
+.terraform
+
