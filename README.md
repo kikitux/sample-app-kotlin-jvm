@@ -27,7 +27,7 @@ for long explantion check [packer-oraclelinux-ovf](https://github.com/kikitux/pa
 
 # our app
 
-download ojdbc8.jar](http://www.oracle.com/technetwork/database/features/jdbc/jdbc-ucp-122-3110062.html) and leave a copy in `src\demo\dep`
+download [ojdbc8.jar](http://www.oracle.com/technetwork/database/features/jdbc/jdbc-ucp-122-3110062.html) and leave a copy in `src\demo\dep`
 
 TL;DR
 
