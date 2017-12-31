@@ -75,10 +75,10 @@ then using vagrant we will start our own oracle db that will be available on por
 use `sys` and `system` have the password of `Password1` defined in the db configuration file `provision/xe.rsp`.
 
 # todo
-[] base oracledb schema
-[] base rest api for stock
-[] events
-[] simple grapql app
+[ ] base oracledb schema
+[ ] base rest api for stock
+[ ] events
+[ ] simple grapql app
 [x] base oracledb
 [x] local project Vagrantfile
 [x] db configuration
