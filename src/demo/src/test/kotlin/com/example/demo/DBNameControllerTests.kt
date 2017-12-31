@@ -12,13 +12,13 @@ import org.springframework.test.context.junit4.SpringRunner
 
 @RunWith(SpringRunner::class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class SysdateControllerTest {
+class DBNameControllerTests {
     @Autowired
     lateinit var testRestTemplate: TestRestTemplate
 
     @Test
     fun testSysdateController() {
-        val result = testRestTemplate.getForEntity("/sysdate", String::class.java)
+        val result = testRestTemplate.getForEntity("/dbname", String::class.java)
         assertNotNull(result)
         assertEquals(result.statusCode, HttpStatus.OK)
     }

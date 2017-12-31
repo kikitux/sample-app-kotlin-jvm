@@ -1,26 +1,24 @@
 package com.example.demo
 
+import io.swagger.annotations.ApiOperation
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.jdbc.core.JdbcTemplate
 import java.sql.ResultSet
-import io.swagger.annotations.ApiOperation
 
 @RestController
-class SysdateController {
+class DBNameController {
 
     @Autowired lateinit var jdbcTemplate: JdbcTemplate
 
-    @ApiOperation(value = "sysdate", notes = "returns SELECT SYSDATE FROM DUAL")
-    @GetMapping("/sysdate")
-    fun sysdate() = jdbcTemplate.query(
-    "SELECT SYSDATE FROM DUAL", {
-           rs: ResultSet, _: Int -> rs.getTimestamp("sysdate")
+    @ApiOperation(value = "dbname", notes = "returns db_name")
+    @GetMapping("/dbname")
+    fun dbname() = jdbcTemplate.query(
+        "select sys_context('userenv','db_name') as db_name from dual", {
+        rs: ResultSet, _: Int -> rs.getString("db_name")
         }
     )
 
 }
-
-
 

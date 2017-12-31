@@ -34,7 +34,6 @@ class GreetingControllerTests {
         assertEquals(result.body, "Hello Word!") // Word
     }
 
-
     @Test
     fun testGreetingControllerDataNull() {
         val result = testRestTemplate.getForEntity("/greetingData", Greeting::class.java)
@@ -42,7 +41,6 @@ class GreetingControllerTests {
         assertEquals(result.statusCode, HttpStatus.OK)
         assertEquals(result.body, Greeting("Hello World!"))
     }
-
 
     @Test
     fun testGreetingControllerDataWord() {
