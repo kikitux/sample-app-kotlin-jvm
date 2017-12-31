@@ -16,10 +16,6 @@ P27E=/opt/rh/python27/enable
 source ${P27E}
 pip install --upgrade pip
 
-#xe db environment
-XEE=/vagrant/provision/xe.env
-source ${XEE}
-
 #install cx_Oracle
 python -m pip install cx_Oracle --upgrade
 

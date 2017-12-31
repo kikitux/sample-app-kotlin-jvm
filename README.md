@@ -54,6 +54,16 @@ curl -s 'http://localhost:8080/dbname'
 
 swagger ui is enabled, and located at [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
 
+# monitoring
+
+## datadog
+
+datadog can be enabled by:
+- create `provision/datadog.env` with your datadog key like `export DD_API_KEY=<your_key>`
+- run the optional vagrant script `vagrant provision --provision-with datadog`
+
+this will setup datadog, and will also install [cx_Oracle](https://oracle.github.io/python-cx_Oracle) python driver
+
 # general info
 
 base oracle db is created by using [packer-oraclelinux-ovf](https://github.com/kikitux/packer-oraclelinux-ovf) repo
@@ -62,7 +72,6 @@ then using vagrant we will start our own oracle db that will be available on por
 use `sys` and `system` have the password of `Password1` defined in the db configuration file `provision/xe.rsp`.
 
 # todo
-[] datadog
 [] base oracledb schema
 [] base rest api for stock
 [] events
@@ -71,4 +80,4 @@ use `sys` and `system` have the password of `Password1` defined in the db config
 [x] local project Vagrantfile
 [x] db configuration
 [x] initial Controller + tests
-
+[x] datadog
