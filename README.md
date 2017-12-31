@@ -1,4 +1,4 @@
-# sample-app-graphql
+# sample-app-kotlin-jvm
 repository for our same app that will create a graphql endpoint
 
 # pre-requirements
