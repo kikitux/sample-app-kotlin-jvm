@@ -15,6 +15,7 @@ env:
 install:
   - .travis/oracle/download.sh
   - .travis/oracle/install.sh
+  - find . -name "*ojdbc*"
 
 script:
   - cd src/demo
