@@ -14,8 +14,9 @@ env:
 
 install:
   - .travis/oracle/download.sh
-  - .travis/oracle/install.sh
+  - find . -name "cookies.txt"
   - find . -name "*ojdbc*"
+  - .travis/oracle/install.sh
 
 script:
   - cd src/demo
