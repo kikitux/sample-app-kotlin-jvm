@@ -59,8 +59,8 @@ swagger ui is enabled, and located at [http://localhost:8080/swagger-ui.html](ht
 
 ## endpoints
 
-http://localhost:8080/actuator/health
-http://localhost:8080/actuator/info
+- http://localhost:8080/actuator/health
+- http://localhost:8080/actuator/info
 
 ## runing the jar
 
@@ -68,7 +68,7 @@ after build we can run our application stand alone
 
 ```
 JAVA_OPTS="-server -Xms4g -Xmx4g -XX:+UseG1GC -XX:MaxGCPauseMillis=100 -XX:+UseStringDeduplication"
-java ${JAVA_OPTS} -Dserver.port=8080 -jar src/demo/build/libs/demo-0.0.1-SNAPSHOT.jar 
+java ${JAVA_OPTS} -Dserver.port=8080 -jar src/demo/build/libs/demo-*-SNAPSHOT.jar 
 ```
 
 # monitoring

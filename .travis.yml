@@ -25,7 +25,7 @@ script:
 before_deploy:
 - git config --local user.name "kikitux"
 - git config --local user.email "kikitux@gmail.com"
-- ${TRAVIS_TAG} || git tag "snapshot-$(date +'%Y%m%d%H%M')-${TRAVIS_COMMIT}"
+- ${TRAVIS_TAG} || git tag "snap-$(date +'%y%m%d%H%M')"
 - export RELEASE_PKG_FILE=$(find . -name 'demo-*-*.jar')
 - echo "deploying $RELEASE_PKG_FILE to GitHub releases"
 deploy:
