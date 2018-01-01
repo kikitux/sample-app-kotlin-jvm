@@ -14,8 +14,9 @@ env:
 
 install:
   - .travis/oracle/download.sh
-  - find . -name "cookies.txt"
+  - curl --cookie ./.travis/oracle/cookies.txt --cookie-jar ./.travis/oracle/cookies.txt --location --output ojdbc8.jar --user-agent "Mozilla/5.0" "http://download.oracle.com/otn/utilities_drivers/jdbc/122010/ojdbc8.jar"
   - find . -name "*ojdbc*"
+  - exit
   - .travis/oracle/install.sh
 
 script:
