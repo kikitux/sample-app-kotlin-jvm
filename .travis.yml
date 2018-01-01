@@ -25,7 +25,7 @@ script:
 before_deploy:
   - ${TRAVIS_TAG} || git config --local user.name "kikitux"
   - ${TRAVIS_TAG} || git config --local user.email "kikitux@gmail.com"
-  - ${TRAVIS_TAG} || git tag "snap-$(date +'%y%m%d%H%M')"
+  - ${TRAVIS_TAG} || git tag "snap-$(date +%y%m%d%H%M)"
   - export RELEASE_PKG_FILE=$(find . -name 'demo-*-*.jar')
   - md5sum $RELEASE_PKG_FILE
   - ls -alh $RELEASE_PKG_FILE

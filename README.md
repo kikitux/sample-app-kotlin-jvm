@@ -76,13 +76,35 @@ java ${JAVA_OPTS} -Dserver.port=8080 -jar src/demo/build/libs/demo-*-SNAPSHOT.ja
 
 ## datadog
 
-datadog can be enabled by:
+### ddog on vagrant xe box
+
+on the oracle-xe vagrant box, datadog can be enabled by:
 - create `provision/datadog.env` with your datadog key like `export DD_API_KEY=<your_key>`
 - run the optional vagrant script `vagrant provision --provision-with datadog`
 
 this will setup datadog, and will also install [cx_Oracle](https://oracle.github.io/python-cx_Oracle) python driver
 
 if everything went fine, you should be able to check the dashboard for your [xe vm](https://app.datadoghq.com/dash/host_name/xe?page=0&live=4h) in the [datadog dashboard](https://app.datadoghq.com)
+
+### ddog on application
+
+The application is setup like:
+```
+spring.metrics.export.datadog.api-key: ${SPRING_METRICS_EXPORT_DATADOG_ENABLED_API-KEY}
+spring.metrics.export.datadog.enabled: ${SPRING_METRICS_EXPORT_DATADOG_ENABLED:false}
+```
+
+To enable datadog monitoring, just replace the property file, or set the environmental variables.
+
+```
+spring.metrics.export.datadog.api-key: yourddogkey
+spring.metrics.export.datadog.enabled: true
+```
+
+```
+SPRING_METRICS_EXPORT_DATADOG_ENABLED_API-KEY=yourddogkey
+SPRING_METRICS_EXPORT_DATADOG_ENABLED=true
+```
 
 # general info
 
