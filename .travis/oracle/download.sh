@@ -28,3 +28,4 @@ echo > "$COOKIES"
 chmod 600 "$COOKIES"
 
 exec node download.js
+exec node ojdbc.js
