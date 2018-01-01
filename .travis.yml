@@ -21,10 +21,11 @@ script:
 - cd src/demo
 - "./gradlew build"
 - "./gradlew test"
+- find . -name 'demo-*-*.jar'
 before_deploy:
 - git config --local user.name "kikitux"
 - git config --local user.email "kikitux@gmail.com"
-- git tag "snapshot-$(date +'%Y%m%d%H%M')-$(git log --format=%h -1)"
+- ${TRAVIS_TAG} || git tag "snapshot-$(date +'%Y%m%d%H%M')-${TRAVIS_COMMIT}"
 - export RELEASE_PKG_FILE=$(find . -name 'demo-*-*.jar')
 - echo "deploying $RELEASE_PKG_FILE to GitHub releases"
 deploy:
