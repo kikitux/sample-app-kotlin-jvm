@@ -7,4 +7,4 @@ datadog.env
 terraform.tfstate*
 .terraform
 ngrok.token
-src/demo/out/
+src/demo/out
