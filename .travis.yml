@@ -38,3 +38,6 @@ deploy:
   on:
     repo: kikitux/sample-app-kotlin-jvm
     tags: true
+    branches:
+      only:
+        - master
