@@ -16,7 +16,7 @@ install:
   - ".travis/oracle/download.sh"
   - curl --cookie ./.travis/oracle/cookies.txt --cookie-jar ./.travis/oracle/cookies.txt --location --output src/demo/dep/ojdbc8.jar --user-agent "Mozilla/5.0" "http://download.oracle.com/otn/utilities_drivers/jdbc/122010/ojdbc8.jar"
   - md5sum src/demo/dep/ojdbc8.jar
-- ".travis/oracle/install.sh"
+  - ".travis/oracle/install.sh"
 script:
   - cd src/demo
   - "./gradlew build"
@@ -46,7 +46,7 @@ deploy:
         - master
 after_deploy:
   - cd build/libs
-  - export DATE=$(date +'%y%m%d%H%M')
+  - export DATE=$(date +%y%m%d%H%M)
   - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
   - docker build -t kikitux/sample-app-kotlin-jvm:${DATE} .
   - docker tag kikitux/sample-app-kotlin-jvm:${DATE} kikitux/sample-app-kotlin-jvm:latest
