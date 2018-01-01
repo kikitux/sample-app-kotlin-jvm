@@ -6,4 +6,4 @@ datadog.env
 *.log
 terraform.tfstate*
 .terraform
-
+ngrok.token

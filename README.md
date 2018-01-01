@@ -57,6 +57,11 @@ swagger ui is enabled, and located at [http://localhost:8080/swagger-ui.html](ht
 
 # monitoring
 
+## endpoints
+
+http://localhost:8080/actuator/health
+http://localhost:8080/actuator/info
+
 ## datadog
 
 datadog can be enabled by:
