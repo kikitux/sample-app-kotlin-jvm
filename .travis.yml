@@ -30,6 +30,10 @@ script:
   - "./gradlew test"
   - "./gradlew build"
   - popd
+  - popd src/sample-statemachine
+  - "./gradlew test"
+  - "./gradlew build"
+  - popd
   - find . -name 'sample-*.jar'  
 before_deploy:
   - ${TRAVIS_TAG} || git config --local user.name "kikitux"
@@ -48,6 +52,7 @@ deploy:
   file: "src/sample-hello/build/libs/sample-hello*.jar"
   file: "src/sample-greeting/build/libs/sample-greeting*.jar"
   file: "src/sample-jdbc/build/libs/sample-jdbc*.jar"  
+  file: "src/sample-statemachine/build/libs/sample-statemachine*.jar"  
   skip_cleanup: true
   on:
     repo: kikitux/sample-app-kotlin-jvm
@@ -56,7 +61,9 @@ deploy:
       only:
         - master
 after_deploy:
-  - cd build/libs
+  - find . -name 'sample-*.jar' -exec cp {} docker/ \;
+  - cd docker
+  - ls -alh
   - export DATE=$(date +%y%m%d%H%M)
   - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
   - docker build -t kikitux/sample-app-kotlin-jvm:${DATE} .
