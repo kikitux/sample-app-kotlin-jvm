@@ -18,9 +18,15 @@ install:
   - md5sum src/demo/dep/ojdbc8.jar
   - ".travis/oracle/install.sh"
 script:
-  - cd src/sample-jdbc
-  - "./gradlew build"
+  - pushd src/sample-hello
   - "./gradlew test"
+  - popd
+  - pushd src/sample-greeting
+  - "./gradlew test"  
+  - popd
+  - pushd src/sample-jdbc
+  - "./gradlew test"
+  - "./gradlew build"
   - find . -name 'demo-*-*.jar'
 before_deploy:
   - ${TRAVIS_TAG} || git config --local user.name "kikitux"
