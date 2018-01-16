@@ -18,7 +18,7 @@ install:
   - md5sum src/demo/dep/ojdbc8.jar
   - ".travis/oracle/install.sh"
 script:
-  - cd src/demo
+  - cd src/sample-jdbc
   - "./gradlew build"
   - "./gradlew test"
   - find . -name 'demo-*-*.jar'
